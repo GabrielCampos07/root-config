@@ -8,7 +8,7 @@ install:
 script:
   - echo "Skipping build during script phase"
 before_deploy:
-  - npm run watch
+  - npm run build:webpack
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
