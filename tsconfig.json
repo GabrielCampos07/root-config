@@ -1,9 +1,16 @@
 {
-  "extends": "ts-config-single-spa",
-  "files": ["src/campos-portfolio-root-config.ts"],
   "compilerOptions": {
-    "declarationDir": "dist"
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
