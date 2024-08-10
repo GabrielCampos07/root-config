@@ -9,6 +9,7 @@
 		"check-format": "prettier --check .",
 		"prepare": "husky install",
 		"build": "webpack --mode=production",
+		"build:webpack": "webpack --mode=production",
 		"build:types": "tsc"
 	},
 	"devDependencies": {
