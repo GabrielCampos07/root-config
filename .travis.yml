@@ -1,0 +1,21 @@
+os: linux
+language: node_js
+node_js:
+  - "18"
+dist: focal
+install:
+  - yarn install
+script:
+  - echo "Skipping build during script phase"
+before_deploy:
+  - npm run watch
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  bucket: "$AWS_BUCKET_NAME"
+  region: "$AWS_BUCKET_REGION"
+  local_dir: "$TRAVIS_BUILD_DIR/dist"
+  skip_cleanup: true
+  on:
+    branch: master
